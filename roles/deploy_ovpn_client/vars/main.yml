@@ -1,0 +1,9 @@
+---
+# vars file for deploy_ovpn_client
+
+openvpn_cipher: AES-128-CBC
+openvpn_script_security: 2
+openvpn_mute: 20
+openvpn_verbose: 3
+openvpn_log: /var/log/openvpn.log
+openvpn_status_log: /var/log/openvpn_status.log

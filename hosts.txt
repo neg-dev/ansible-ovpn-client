@@ -1,0 +1,2 @@
+[ovpn_clients]
+ovpn ansible_host=172.18.0.176

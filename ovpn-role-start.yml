@@ -1,0 +1,7 @@
+---
+- name: install OpenVPN client
+  hosts: ovpn_clients
+  become: yes
+
+  roles:
+    - { role: deploy_ovpn_client, when: ansible_distribution_release == 'xenial' }

@@ -1,0 +1,12 @@
+---
+# defaults file for deploy_ovpn_
+
+openvpn_server_host: 203.164.10.24
+openvpn_port: 1194
+openvpn_protocol: udp
+openvpn_device: tun
+openvpn_dir: /etc/openvpn
+openvpn_file: "{{ansible_hostname}}.conf"
+
+
+

@@ -1,0 +1,31 @@
+---
+# tasks file for deploy_ovpn_client
+- name: install openvpn
+  package:
+   name: openvpn
+   state: present
+  become: yes
+  become_method: sudo
+  become_user: root
+
+- name: openvpn service setup
+  service:
+    name: openvpn
+    enabled: yes
+    state: started
+  become: yes
+  become_method: sudo
+  become_user: root
+  
+- name: create client config
+  template:
+    src: "etc/openvpn/client.conf.j2"
+    dest: "{{ openvpn_dir }}/{{ openvpn_file }}"
+    owner: root
+    group: root
+    mode: 0666
+  notify:
+    - restart openvpn
+  become: yes
+  become_method: sudo
+  become_user: root
